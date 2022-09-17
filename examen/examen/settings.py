@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'examen.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'PNLF',
+        'NAME': 'PNLF 2',
         'USER': 'postgres',
         'PASSWORD':'130598',
         'HOST':'localhost',
