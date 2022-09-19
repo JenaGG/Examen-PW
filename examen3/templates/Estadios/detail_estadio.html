@@ -1,0 +1,30 @@
+{%extends "base/base.html"%}
+{% block title %}Detalles{% endblock title %}
+
+{% block content %}
+<div class="col-md-6 offset-md-4">
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-strip">
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Numero</th>
+                <th>Equipo Perteneciente</th>
+                <th>Fecha de ingreso al equipo</th>
+                <tr>
+                    <td>{{ object.Nombre }}</th>
+                    <td>{{ object.Edad}}</td>
+                    <td>{{ object.Numero}}</td>
+                    <td>{{ object.Equipo_perteneciente}}</td>
+                    <td>{{ object.Fecha_de_ingreso_al_equipo}}</td>
+                </tr>
+                </table>
+
+
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock  %}

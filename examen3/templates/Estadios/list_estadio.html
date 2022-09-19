@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Lista de estadios{% endblock title %}
+
+{% block content %}
+
+<table class="table table-strip">
+    <th>Nombre</th>
+    <th>Capacidad</th>
+    <th>Disponible</th>
+    <th>Partido a disputar</th>
+    <th>Fecha</th>
+    {% for Estadio in object_list %}
+    <tr>
+        <td>{{Estadio.Nombre}}</td>
+        <td>{{Estadio.Capacidad}}</td>
+        <td>{{Estadio.Disponible}}</td>
+        <td>{{Estadio.Partido_a_disputar}}</td>
+        <td>{{Estadio.Fecha}}</td>
+        <td><a href="{% url 'estadios:detail_estadio' Estadio.pk %}" class="btn btn-outline-primary">Detalles</a></td>
+        <td><a href="{% url 'estadios:update_estadio' Estadio.pk %}" class="btn btn-outline-warning">Actualizacion</a></td>
+        <td><a href="{% url 'estadios:delete_estadio' Estadio.pk %}" class="btn btn-outline-danger">Deshabilitar</a></td>
+
+    </tr>    
+    {% endfor %}
+</table>
+<a href= "{% url 'estadios:create_estadio' %}" class = "btn btn-outline-success mb-3 form-control">Ingresar Nuevo Estadio</a>
+{% endblock %}

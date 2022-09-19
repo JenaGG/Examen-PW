@@ -1,0 +1,30 @@
+{%extends "base/base.html"%}
+{% block title %}Detalles{% endblock title %}
+
+{% block content %}
+<div class="col-md-6 offset-md-4">
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-strip">
+                <th>Nombre</th>
+                <th>Entrenador</th>
+                <th>Total de jugadores</th>
+                <th>Total de Partidos</th>
+                <th>Total de puntos</th>
+                <tr>
+                    <td>{{ object.Nombre }}</th>
+                    <td>{{ object.Entrenador}}</td>
+                    <td>{{ object.Total_de_jugadores}}</td>
+                    <td>{{ object.Total_de_Partidos}}</td>
+                    <td>{{ object.Total_de_puntos}}</td>
+                </tr>
+                </table>
+
+
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock  %}
