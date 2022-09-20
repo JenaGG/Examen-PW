@@ -3,28 +3,36 @@
 {% block title %}Lista de Jugadores{% endblock title %}
 
 {% block content %}
+<div class="col-md-10 offset-md-1">
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-strip"  style="text-align: center ;">
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Numero</th>
+                <th>Equipo Perteneciente</th>
+                <th>Fecha de ingreso</th>
+                <th>Estatus</th>
+                <th>Acciones</th>
+                {% for Jugadore in object_list %}
+                <tr>
+                    <td>{{Jugadore.Nombre}}</td>
+                    <td>{{Jugadore.Edad}}</td>
+                    <td>{{Jugadore.Numero}}</td>
+                    <td>{{Jugadore.Equipo_perteneciente}}</td>
+                    <td>{{Jugadore.Fecha_de_ingreso_al_equipo}}</td>
+                    <td>{{Jugadore.Estatus}}</td>
+                    <td>
+                        <a href="{% url 'jugadores:detail_jugador' Jugadore.pk %}" class="btn btn-outline-info">Info</a>
+                        <a href="{% url 'jugadores:update_jugador' Jugadore.pk %}" class="btn btn-outline-warning">Actualizar</a>
+                        <a href="{% url 'jugadores:delete_jugador' Jugadore.pk %}" class="btn btn-outline-danger">Descalificar</a>
+                </td>
 
-<table class="table table-strip">
-    <th>Nombre</th>
-    <th>Edad</th>
-    <th>Numero</th>
-    <th>Equipo Perteneciente</th>
-    <th>Fecha de ingreso</th>
-    <th>Estatus</th>
-    {% for Jugadore in object_list %}
-    <tr>
-        <td>{{Jugadore.Nombre}}</td>
-        <td>{{Jugadore.Edad}}</td>
-        <td>{{Jugadore.Numero}}</td>
-        <td>{{Jugadore.Equipo_perteneciente}}</td>
-        <td>{{Jugadore.Fecha_de_ingreso_al_equipo}}</td>
-        <td>{{Jugadore.Estatus}}</td>
-        <td><a href="{% url 'jugadores:detail_jugador' Jugadore.pk %}" class="btn btn-outline-primary">Detalles</a></td>
-        <td><a href="{% url 'jugadores:update_jugador' Jugadore.pk %}" class="btn btn-outline-warning">Actualizacion</a></td>
-        <td><a href="{% url 'jugadores:delete_jugador' Jugadore.pk %}" class="btn btn-outline-danger">Descalificar</a></td>
-
-    </tr>    
-    {% endfor %}
-</table>
-<a href= "{% url 'jugadores:create_jugador' %}" class = "btn btn-outline-success mb-3 form-control">Ingresar Nuevo jugador</a>
+                </tr>    
+                {% endfor %}
+            </table>
+            <a href= "{% url 'jugadores:create_jugador' %}" class = "btn btn-outline-success mb-3 form-control">Ingresar Nuevo jugador</a>
+        </div>
+    </div>
+</div>
 {% endblock %}

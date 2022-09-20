@@ -2,7 +2,7 @@
 {% block title %}Detalles{% endblock title %}
 
 {% block content %}
-<div class="col-md-6 offset-md-4">
+<div class="col-md-10 offset-md-1">
     <div class="card">
         <div class="card-body">
             <table class="table table-strip">
@@ -18,8 +18,8 @@
                     <td>{{ object.Total_de_Partidos}}</td>
                     <td>{{ object.Total_de_puntos}}</td>
                 </tr>
-                </table>
-
+            </table>
+            <a href="{% url 'equipos:list_equipo' %}" class = "btn btn-outline-success mb-3 form-control">Regresar</a>
 
         </div>
 

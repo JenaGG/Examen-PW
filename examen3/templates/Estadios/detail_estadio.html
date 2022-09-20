@@ -2,27 +2,26 @@
 {% block title %}Detalles{% endblock title %}
 
 {% block content %}
-<div class="col-md-6 offset-md-4">
+<div class="col-md-10 offset-md-1">
     <div class="card">
         <div class="card-body">
-            <table class="table table-strip">
-                <th>Nombre</th>
-                <th>Edad</th>
-                <th>Numero</th>
-                <th>Equipo Perteneciente</th>
-                <th>Fecha de ingreso al equipo</th>
+            <table class="table table-strip" >
+                <th style="text-align: center ;">Nombre</th>
+                <th style="text-align: center ;">Capacidad</th>
+                <th style="text-align: center ;">Disponible</th>
+                <th style="text-align: center ;">Partido a disputar</th>
+                <th style="text-align: center ;">Fecha</th>
                 <tr>
-                    <td>{{ object.Nombre }}</th>
-                    <td>{{ object.Edad}}</td>
-                    <td>{{ object.Numero}}</td>
-                    <td>{{ object.Equipo_perteneciente}}</td>
-                    <td>{{ object.Fecha_de_ingreso_al_equipo}}</td>
+                    <td style="text-align: center ;">{{ object.Nombre }}</th>
+                    <td style="text-align: center ;">{{ object.Capacidad}}</td>
+                    <td style="text-align: center ;">{{ object.Disponible}}</td>
+                    <td style="text-align: center ;">{{ object.Partido_a_disputar}}</td>
+                    <td style="text-align: center ;">{{ object.Fecha}}</td>
                 </tr>
-                </table>
 
-
+            </table>
+            <a href="{% url 'estadios:list_estadio' %}" class = "btn btn-outline-success mb-3 form-control">Regresar</a>
         </div>
-
     </div>
 </div>
 

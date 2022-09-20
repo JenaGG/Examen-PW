@@ -3,11 +3,17 @@
 {% block tittle %}Actualizacion{% endblock tittle%}
 
 {% block content %}
-<form action="" method="post" class="form">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-outline-warning mb-3 form-control">Actualizar</button>
-    <a href="{% url 'equipos:list_equipo' %}" class="btn btn-outline-info mb-3 form-control">Cancelar</a>
-</form>
+<div class="col-md-10 offset-md-1">
+    <div class="card">
+        <div class="card-body">
+            <form action="" method="post" class="form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-outline-warning mb-3 form-control">Actualizar</button>
+                <a href="{% url 'equipos:list_equipo' %}" class="btn btn-outline-info mb-3 form-control">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>          
 
 {% endblock  %}

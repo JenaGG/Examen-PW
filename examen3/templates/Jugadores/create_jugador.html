@@ -3,17 +3,18 @@
 {% block title %}Crear Equipo{% endblock title%}
 
 {% block content %}
-<div class="card">
-    <div class="card-body">
-        <form action="" method="POST" class="form">
-            {% csrf_token %}
-            {{form.as_p}}
-            <button type="submit" class="btn btn-outline-success mb-3 form-control">Registrar</button>
-            <a href="{% url 'jugadores:list_jugador' %}" class="btn btn-outline-info mb-3 form-control">Cancelar</a>
-    
-        </form>
-    
+<div class="col-md-10 offset-md-1">
+    <div class="card">
+        <div class="card-body">
+            <form action="" method="POST" class="form">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class="btn btn-outline-success mb-3 form-control">Registrar</button>
+                <a href="{% url 'jugadores:list_jugador' %}" class="btn btn-outline-info mb-3 form-control">Cancelar</a>
+        
+            </form>
+        
+        </div>
     </div>
 </div>
-
 {% endblock  %}

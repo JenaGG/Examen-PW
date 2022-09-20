@@ -3,6 +3,21 @@
 {% block title %}PNLF{% endblock title %}
 
 {% block content %}
-
-  
+<div class="col-md-10 offset-md-1">
+    <div class="card">
+        <div class="card-body">
+            <h4 style="text-align: center;">Seleccione de opciones:</h4>
+            <form action="/updateTeam/{{team.id_team}}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group py-4 d-grid gap-4 col-md-4 offset-md-4">
+                    <td>
+                        <a href="/equipos/list_equipo" class="btn btn-danger">Equipos</a>
+                        <a href="/jugadores/list_jugador" class="btn btn-danger">Jugadores</a>
+                        <a href="/estadios/list_estadio" class="btn btn-danger">Estadios</a>
+                    </td>
+                </div>
+            </form>
+        </div>
+    </div>    
+</div>  
 {% endblock content %}
