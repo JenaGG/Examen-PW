@@ -1,8 +1,10 @@
 from audioop import reverse
+from urllib import request
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.urls import reverse_lazy
 from django.contrib import messages
+
 
 from .models import Estadio
 from .forms import EstadioForm
@@ -14,6 +16,8 @@ class CreateEstadio(generic.CreateView):
     model = Estadio
     form_class = EstadioForm
     success_url = reverse_lazy("estadios:list_estadio")
+
+
 
 
 class ListEstadio(generic.ListView):
@@ -38,5 +42,5 @@ def delete_estadio(request, pk):
     estadio = Estadio.objects.get(pk=pk, Disponible=True)
     estadio.Disponible = False
     estadio.save()
-    messages.warning(request, "Fuiste descalificado de la temporada :(")
+    messages.warning(request, "Fuiste clausurado esta temporada :(")
     return redirect("estadios:list_estadio")

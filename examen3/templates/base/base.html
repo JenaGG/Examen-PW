@@ -39,6 +39,45 @@
       </nav>
       <!--Termina barrita-->
     </div>
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        {% if messages %}
+        {% for message in messages %}
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+          <script>
+            Swal.fire({
+              "title": "Registrado",
+              "text": "{{ message }}",
+              "icon": "success",
+              "confirmButtonText": "OK"
+            })
+          </script>
+          {% endif %}
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+          <script>
+            Swal.fire({
+              "title": ":(",
+              "text": "{{ message }}",
+              "icon": "warning",
+              "confirmButtonText": "OK"
+            })
+          </script>
+          {% endif %}
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+          <script>
+            Swal.fire({
+              "title": "ERROR!",
+              "text": "{{ message }}",
+              "icon": "error",
+              "confirmButtonText": "OK"
+            })
+          </script>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    
+
 
   
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
@@ -51,7 +90,7 @@
 </div>
 <div class="row">
   <div class="col px-3">
-    <footer><font color="white">Hecho por el Jena</font></footer>
+    <footer><font color="white">Hecho por Genaro Damian Martinez Perez</font></footer>
   </div>
 </div>
 </div>
